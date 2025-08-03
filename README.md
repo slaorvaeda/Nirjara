@@ -1,4 +1,4 @@
-# Developer Helper Chrome Extension
+# Nirjara: Developer Helper Chrome Extension
 
 A comprehensive Chrome extension designed to boost developer productivity with essential tools for coding, debugging, and web development.
 
@@ -119,7 +119,7 @@ Right-click on any webpage to access:
 ## File Structure
 
 ```
-developer-helper/
+Nirjara/
 ├── manifest.json          # Extension manifest
 ├── popup.html             # Extension popup interface
 ├── popup.css              # Popup styling
