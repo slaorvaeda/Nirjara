@@ -1,0 +1,63 @@
+{
+  "name": "developer-helper-extension",
+  "version": "1.0.0",
+  "description": "A comprehensive Chrome extension designed to boost developer productivity with essential tools for coding, debugging, and web development.",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'Extension is ready to load in Chrome'",
+    "test": "echo 'Open demo.html in Chrome to test the extension'",
+    "package": "zip -r developer-helper-extension.zip . -x '*.git*' 'node_modules/*' '*.DS_Store'",
+    "dev": "echo 'Load unpacked extension in Chrome and open demo.html'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "developer-tools",
+    "code-formatting",
+    "syntax-highlighting",
+    "color-picker",
+    "json-formatter",
+    "css-validator",
+    "performance-analysis",
+    "code-snippets",
+    "web-development"
+  ],
+  "author": "Developer Helper Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/developer-helper-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/developer-helper-extension/issues"
+  },
+  "homepage": "https://github.com/yourusername/developer-helper-extension#readme",
+  "engines": {
+    "chrome": ">=88.0.0"
+  },
+  "manifest": {
+    "version": 3,
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting",
+      "tabs",
+      "contextMenus",
+      "notifications",
+      "alarms"
+    ]
+  },
+  "files": [
+    "manifest.json",
+    "popup.html",
+    "popup.css",
+    "popup.js",
+    "content.js",
+    "content.css",
+    "background.js",
+    "icons/*",
+    "README.md",
+    "demo.html"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+} 

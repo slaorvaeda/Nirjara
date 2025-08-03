@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .icon-container { margin: 20px 0; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        button { padding: 10px 20px; margin: 5px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #5a6fd8; }
+    </style>
+</head>
+<body>
+    <h1>Developer Helper Extension Icon Generator</h1>
+    <p>Click the buttons below to generate icons for your Chrome extension:</p>
+    
+    <div class="icon-container">
+        <h3>16x16 Icon</h3>
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <button onclick="downloadIcon(16)">Download 16x16</button>
+    </div>
+    
+    <div class="icon-container">
+        <h3>32x32 Icon</h3>
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <button onclick="downloadIcon(32)">Download 32x32</button>
+    </div>
+    
+    <div class="icon-container">
+        <h3>48x48 Icon</h3>
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <button onclick="downloadIcon(48)">Download 48x48</button>
+    </div>
+    
+    <div class="icon-container">
+        <h3>128x128 Icon</h3>
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <button onclick="downloadIcon(128)">Download 128x128</button>
+    </div>
+
+    <script>
+        function drawIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Draw background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Draw "DH" text
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.4}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('DH', size/2, size/2);
+            
+            // Add a subtle border
+            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+            ctx.lineWidth = size * 0.02;
+            ctx.strokeRect(size * 0.05, size * 0.05, size * 0.9, size * 0.9);
+        }
+        
+        function downloadIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const link = document.createElement('a');
+            link.download = `icon${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all icons on load
+        window.onload = function() {
+            drawIcon(document.getElementById('icon16'), 16);
+            drawIcon(document.getElementById('icon32'), 32);
+            drawIcon(document.getElementById('icon48'), 48);
+            drawIcon(document.getElementById('icon128'), 128);
+        };
+    </script>
+</body>
+</html> 

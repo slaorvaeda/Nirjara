@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Helper Extension Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+        }
+        
+        .demo-section h2 {
+            color: #24292e;
+            margin-bottom: 16px;
+        }
+        
+        .code-block {
+            background: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+        }
+        
+        .textarea-demo {
+            width: 100%;
+            min-height: 100px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            padding: 12px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            resize: vertical;
+        }
+        
+        .color-demo {
+            display: flex;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            border: 2px solid #e1e4e8;
+        }
+        
+        .instructions {
+            background: #ddf4d8;
+            border: 1px solid #7cba01;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #1a7f37;
+        }
+    </style>
+</head>
+<body>
+    <h1>Developer Helper Extension Demo</h1>
+    <p>This page demonstrates the various features of the Developer Helper Chrome extension. Install the extension and try out the different tools!</p>
+
+    <div class="instructions">
+        <h3>How to Test</h3>
+        <ol>
+            <li>Install the Developer Helper extension</li>
+            <li>Click the extension icon in your toolbar</li>
+            <li>Try the different tools on this page</li>
+            <li>Use the context menu (right-click) for additional options</li>
+        </ol>
+    </div>
+
+    <!-- JavaScript Demo -->
+    <div class="demo-section">
+        <h2>JavaScript Code Formatting</h2>
+        <p>Click "Format Code" in the extension to format this JavaScript code:</p>
+        <div class="code-block">
+            <pre><code class="javascript">function calculateTotal(items){let total=0;for(let i=0;i<items.length;i++){total+=items[i].price;}return total;}const products=[{name:"Laptop",price:999},{name:"Mouse",price:25},{name:"Keyboard",price:75}];console.log("Total:",calculateTotal(products));</code></pre>
+        </div>
+        
+        <p>Or try formatting in this textarea:</p>
+        <textarea class="textarea-demo" data-language="javascript">function greetUser(name){return"Hello, "+name+"!";}const message=greetUser("Developer");console.log(message);</textarea>
+    </div>
+
+    <!-- CSS Demo -->
+    <div class="demo-section">
+        <h2>CSS Code Formatting</h2>
+        <p>Click "Format Code" to format this CSS:</p>
+        <div class="code-block">
+            <pre><code class="css">.container{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}</code></pre>
+        </div>
+        
+        <p>Or format in this textarea:</p>
+        <textarea class="textarea-demo" data-language="css">.button{background:#667eea;color:white;border:none;padding:12px 24px;border-radius:6px;cursor:pointer;transition:background 0.2s ease;}.button:hover{background:#5a6fd8;}</textarea>
+    </div>
+
+    <!-- HTML Demo -->
+    <div class="demo-section">
+        <h2>HTML Code Formatting</h2>
+        <p>Click "Format Code" to format this HTML:</p>
+        <div class="code-block">
+            <pre><code class="html">&lt;div class="card"&gt;&lt;h3&gt;Title&lt;/h3&gt;&lt;p&gt;This is a paragraph with some text.&lt;/p&gt;&lt;button class="btn"&gt;Click me&lt;/button&gt;&lt;/div&gt;</code></pre>
+        </div>
+        
+        <p>Or format in this textarea:</p>
+        <textarea class="textarea-demo" data-language="html">&lt;nav class="navbar"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;</textarea>
+    </div>
+
+    <!-- JSON Demo -->
+    <div class="demo-section">
+        <h2>JSON Formatting</h2>
+        <p>Click "JSON Formatter" to format this JSON data:</p>
+        <div class="code-block">
+            <pre><code class="json">{"name":"John Doe","age":30,"email":"john@example.com","address":{"street":"123 Main St","city":"Anytown","state":"CA","zip":"12345"},"hobbies":["reading","coding","hiking"],"active":true}</code></pre>
+        </div>
+        
+        <p>Or format in this textarea:</p>
+        <textarea class="textarea-demo" data-language="json">{"users":[{"id":1,"name":"Alice","role":"admin"},{"id":2,"name":"Bob","role":"user"},{"id":3,"name":"Charlie","role":"moderator"}],"total":3,"page":1}</textarea>
+    </div>
+
+    <!-- Color Picker Demo -->
+    <div class="demo-section">
+        <h2>Color Picker Demo</h2>
+        <p>Click "Color Picker" in the extension, then hover over these colored boxes to pick colors:</p>
+        <div class="color-demo">
+            <div class="color-box" style="background: #667eea;"></div>
+            <div class="color-box" style="background: #28a745;"></div>
+            <div class="color-box" style="background: #dc3545;"></div>
+            <div class="color-box" style="background: #ffc107;"></div>
+            <div class="color-box" style="background: #6f42c1;"></div>
+            <div class="color-box" style="background: #fd7e14;"></div>
+        </div>
+        <p>You can also hover over any text or element on this page to pick colors!</p>
+    </div>
+
+    <!-- CSS Validation Demo -->
+    <div class="demo-section">
+        <h2>CSS Validation Demo</h2>
+        <p>This page contains some CSS that can be validated. Click "CSS Validator" to check for issues:</p>
+        <style>
+            .demo-section { margin-bottom: 40px; padding: 20px; border: 1px solid #e1e5e9; border-radius: 8px; }
+            .code-block { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; margin: 16px 0; overflow-x: auto; }
+            /* This CSS has proper syntax */
+        </style>
+    </div>
+
+    <!-- Performance Demo -->
+    <div class="demo-section">
+        <h2>Performance Analysis Demo</h2>
+        <p>Click "Performance" in the extension to analyze this page's performance metrics.</p>
+        <p>The extension will show you:</p>
+        <ul>
+            <li>Page load time</li>
+            <li>DOM content loaded time</li>
+            <li>First paint time</li>
+            <li>Number of resources loaded</li>
+        </ul>
+    </div>
+
+    <!-- Snippets Demo -->
+    <div class="demo-section">
+        <h2>Code Snippets Demo</h2>
+        <p>Focus on this textarea and try inserting snippets from the extension:</p>
+        <textarea class="textarea-demo" placeholder="Click here and then use snippets from the extension..."></textarea>
+        <p>Try these snippets:</p>
+        <ul>
+            <li><code>console.log()</code> - Basic console logging</li>
+            <li><code>function()</code> - Function declaration</li>
+            <li><code>() => {}</code> - Arrow function</li>
+            <li><code>try-catch</code> - Error handling</li>
+            <li><code>fetch()</code> - API request</li>
+            <li><code>async/await</code> - Async function</li>
+        </ul>
+    </div>
+
+    <!-- Syntax Highlighting Demo -->
+    <div class="demo-section">
+        <h2>Syntax Highlighting Demo</h2>
+        <p>Click "Syntax Highlight" to apply syntax highlighting to this code:</p>
+        <div class="code-block">
+            <pre><code class="javascript">// This is a JavaScript comment
+function calculateArea(width, height) {
+    const area = width * height;
+    return area;
+}
+
+const rectangle = {
+    width: 10,
+    height: 5,
+    color: "blue"
+};
+
+const area = calculateArea(rectangle.width, rectangle.height);
+console.log("Area:", area);</code></pre>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>Extension Features Summary</h3>
+        <ul>
+            <li><strong>Code Formatting:</strong> Format JavaScript, CSS, HTML, and JSON code</li>
+            <li><strong>Syntax Highlighting:</strong> Apply syntax highlighting to code blocks</li>
+            <li><strong>Color Picker:</strong> Pick colors from any element on the page</li>
+            <li><strong>JSON Formatter:</strong> Format and validate JSON data</li>
+            <li><strong>CSS Validator:</strong> Check CSS syntax for errors</li>
+            <li><strong>Performance Analysis:</strong> Analyze page performance metrics</li>
+            <li><strong>Code Snippets:</strong> Insert pre-built and custom code snippets</li>
+            <li><strong>Context Menu:</strong> Right-click for quick access to tools</li>
+            <li><strong>Keyboard Shortcuts:</strong> Use Ctrl+Shift+F for formatting, Ctrl+Shift+C for color picker</li>
+        </ul>
+    </div>
+
+    <script>
+        // Add some interactive elements for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Demo page loaded successfully!');
+            
+            // Add some sample data for performance testing
+            const sampleData = {
+                users: [
+                    { id: 1, name: 'Alice', email: 'alice@example.com' },
+                    { id: 2, name: 'Bob', email: 'bob@example.com' },
+                    { id: 3, name: 'Charlie', email: 'charlie@example.com' }
+                ],
+                settings: {
+                    theme: 'light',
+                    notifications: true,
+                    autoSave: false
+                }
+            };
+            
+            // Store in global scope for testing
+            window.sampleData = sampleData;
+        });
+    </script>
+</body>
+</html> 

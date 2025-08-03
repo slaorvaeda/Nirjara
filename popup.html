@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Helper</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Developer Helper</h1>
+            <p class="subtitle">Boost your development workflow</p>
+        </header>
+
+        <nav class="nav">
+            <button class="nav-btn active" data-tab="tools">Tools</button>
+            <button class="nav-btn" data-tab="snippets">Snippets</button>
+            <button class="nav-btn" data-tab="settings">Settings</button>
+        </nav>
+
+        <main class="content">
+            <!-- Tools Tab -->
+            <div class="tab-content active" id="tools">
+                <div class="tool-grid">
+                    <button class="tool-btn" id="formatCode">
+                        <div class="tool-icon">⚡</div>
+                        <span>Format Code</span>
+                    </button>
+                    <button class="tool-btn" id="syntaxHighlight">
+                        <div class="tool-icon">🎨</div>
+                        <span>Syntax Highlight</span>
+                    </button>
+                    <button class="tool-btn" id="colorPicker">
+                        <div class="tool-icon">🎯</div>
+                        <span>Color Picker</span>
+                    </button>
+                    <button class="tool-btn" id="jsonFormatter">
+                        <div class="tool-icon">📋</div>
+                        <span>JSON Formatter</span>
+                    </button>
+                    <button class="tool-btn" id="cssValidator">
+                        <div class="tool-icon">✓</div>
+                        <span>CSS Validator</span>
+                    </button>
+                    <button class="tool-btn" id="performance">
+                        <div class="tool-icon">📊</div>
+                        <span>Performance</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Snippets Tab -->
+            <div class="tab-content" id="snippets">
+                <div class="snippet-section">
+                    <h3>Quick Snippets</h3>
+                    <div class="snippet-list">
+                        <button class="snippet-btn" data-snippet="console-log">console.log()</button>
+                        <button class="snippet-btn" data-snippet="function">function()</button>
+                        <button class="snippet-btn" data-snippet="arrow-function">() => {}</button>
+                        <button class="snippet-btn" data-snippet="try-catch">try-catch</button>
+                        <button class="snippet-btn" data-snippet="fetch">fetch()</button>
+                        <button class="snippet-btn" data-snippet="async-await">async/await</button>
+                    </div>
+                </div>
+                <div class="snippet-section">
+                    <h3>Custom Snippets</h3>
+                    <div class="custom-snippets" id="customSnippets">
+                        <!-- Custom snippets will be loaded here -->
+                    </div>
+                    <button class="add-snippet-btn" id="addSnippet">Add New Snippet</button>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings">
+                <div class="settings-section">
+                    <h3>General Settings</h3>
+                    <div class="setting-item">
+                        <label for="autoFormat">Auto-format on paste</label>
+                        <input type="checkbox" id="autoFormat">
+                    </div>
+                    <div class="setting-item">
+                        <label for="darkMode">Dark mode</label>
+                        <input type="checkbox" id="darkMode">
+                    </div>
+                    <div class="setting-item">
+                        <label for="syntaxTheme">Syntax theme</label>
+                        <select id="syntaxTheme">
+                            <option value="default">Default</option>
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Keyboard Shortcuts</h3>
+                    <div class="shortcut-list">
+                        <div class="shortcut-item">
+                            <span>Format Code</span>
+                            <kbd>Ctrl+Shift+F</kbd>
+                        </div>
+                        <div class="shortcut-item">
+                            <span>Toggle Color Picker</span>
+                            <kbd>Ctrl+Shift+C</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="status" id="status"></div>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
